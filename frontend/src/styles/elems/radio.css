@@ -1,0 +1,120 @@
+.content__aside {
+    padding-top: 46px;
+    background-color: var(--light-gray-color);
+    min-width: 290px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content__label-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Actor", "Nata Sans", sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 13px 33px 13px 30px;
+    color: var(--light-black-color);
+    transition: background-color .3s ease-in;
+}
+
+.content__input-radio {
+    opacity: 0;
+    appearance: none;
+    padding-left: 44px;
+}
+
+.content__label-radio::before {
+    position: absolute;
+    content: "";
+    mask-image: url('../../img/music.svg');
+    width: 32px;
+    height: 32px;
+    background-color: var(--orange-color);
+    transition: transform .3s ease-in-out;
+}
+
+.content__label-radio:hover::before {
+    transform: translateX(-5px);
+}
+
+.content__label-radio:has(.content__input-radio:focus-visible) {
+    outline: none;
+    background-color: var(--date-gray);
+}
+
+.radio-active {
+    background-color: var(--white-color);
+}
+
+@media (max-width: 1024px) {
+    .content__aside {
+        min-width: 200px;
+    }
+
+    .content__label-radio {
+        font-size: 14px;
+        line-height: 12px;
+        padding: 10px 16px;
+    }
+
+    .content__label-radio::before {
+        transform: scale(0.7);
+    }
+
+    .content__label-radio:hover::before {
+        transform: scale(0.7);
+    }
+
+    .content__input-radio {
+        padding-left: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content__aside {
+        padding: 20px 16px;
+        flex-direction: row-reverse;
+        justify-content: center;
+        min-height: fit-content;
+    }
+
+    .content__label-radio {
+        background-color: var(--white-color);
+        border-radius: 30px;
+
+    }
+
+    .content__label-radio::before {
+        mask-image: url('../../img/aside-play.svg');
+        background-color: var(--orange-color);
+        width: 24px;
+        height: 24px;
+        transform: scale(0.7) translateX(-5px);
+    }
+    .content__input-radio {
+        padding-left: 26px;
+    }
+
+    #inp-favorite {
+        padding-left: 0;
+    }
+
+    .content__label-radio:has(#inp-favorite)::before {
+        content: none;
+        width: 0;
+        height: 0;
+     }
+    .radio-active {
+        background: var(--orange-color);
+        color: var(--white-color);
+    }
+
+    .radio-active::before {
+        background-color: var(--white-color);
+    }
+
+   
+}

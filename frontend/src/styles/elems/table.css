@@ -1,0 +1,318 @@
+
+.content__table {
+    width: 100%;
+    border-collapse: collapse;
+    padding-bottom: 130px;
+}
+
+#table-body {
+    height: calc(100% - 130px);
+}
+
+
+thead tr, .content__table__row:not(:last-child) {
+    border-bottom: 1px solid var(--row-gray);
+}
+
+.content__table__text,
+.content__table__icon {
+    padding: 10px 8px;
+    color: var(--text-gray);
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    min-width: 40px;
+}
+
+.content__table__text:first-child {
+    width: 40px;
+}
+
+.content__table__icon {
+    position: relative;
+}
+
+.content__table__icon--date::after {
+    position: absolute;
+    content: '';
+    mask-image: url('../../img/calendar.svg');
+    background-color: var(--date-gray);
+    width: 16px;
+    height: 16px;
+        top: 25%;
+}
+
+.content__table__icon--time::after {
+    position: absolute;
+    content: '';
+    mask-image: url('../../img/time.svg');
+    background-color: var(--date-gray);
+    width: 16px;
+    height: 16px;
+        top: 25%;
+}
+
+.content__table__icon--time {
+    text-align: center;
+}
+
+
+.content__table__item {
+    padding: 14px 0 14px 10px;
+    height: 60px;
+}
+
+.content__table__wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    padding-left: 78px;
+    gap: 10px;
+}
+
+.content__table__wrap::before {
+    position: absolute;
+    content: '';
+    background-image: url('../../img/track-img.jpg');
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    left: 0;
+}
+
+.content__table__item--num {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.content__table__item--title {
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.content__table__item--descr {
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--date-gray);
+}
+
+.content__table__item--date{
+    font-size: 14px;
+    line-height: 12px;
+    color: var(--date-gray);
+}
+
+
+.content__table__icon--date {
+    display: none;
+}
+
+.content__table__item--btn-group {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content__table__button {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.content__table__button--favorite, .content__table__button--setting {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.content__table__button--favorite:focus-visible,
+.content__table__button--setting:focus-visible {
+    outline: none;
+    outline: 1px solid var(--row-gray);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.content__table__button--favorite::before {
+    position: absolute;
+    content: '';
+    mask-image: url('../../img/like.svg');
+    background-color: var(--orange-color);
+    opacity: 0.4;
+    width: 22px;
+    height: 18px;
+    transform: translate(-50%, -50%);
+}
+
+.content__table__button--setting::before {
+    position: absolute;
+    content: '';
+    mask-image: url('../../img/setting.svg');
+    background-color: var(--settings);
+    width: 23px;
+    height: 4px;
+    transform: translate(-50%, -50%);
+
+}
+
+.content__table__duration {
+    color: var(--date-gray);
+}
+
+.content__table__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: -90px;
+    transform: translate(-40px, 0%);
+    left: 0;
+    right: 0;
+}
+.content__table__arrow-btn {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    color: var(--date-gray);
+    cursor: pointer;
+}
+
+.content__table__arrow-btn:focus-visible {
+    outline: none;
+    color: var(--row-gray);
+}
+
+.active-pagination {
+    color: var(--orange-color);
+    transform: scale(1.08);
+}
+
+.active::before {
+    opacity: 1;
+}
+
+.delete-btn {
+    display: none;
+    position: absolute;
+    padding: 6px 10px;
+    background-color: var(--white-color);
+    color: var(--date-gray);
+    border-radius: 6px;
+    border: 1px solid var(--date-gray);
+    top: -20px;
+    font-size: 14px;
+    min-width: 130px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    animation: removeNotice 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .content__table__item--num {
+            font-size: 16px;
+            line-height: 12px;
+    }
+
+    .content__table__wrap::before {
+        transform: scale(0.7);
+        
+    }
+
+    .content__table__wrap {
+        padding-left: 65px;
+    }
+
+    .content__table__arrow-btn {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    thead {
+        display: none !important;
+    }
+
+    #table-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content__table__item--num {
+        display: none;
+    }
+
+    .content__table__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--white-color);
+        gap: 10px;
+    }
+
+    .content__table__item {
+        height: auto;
+        padding: 16px 10px;
+    }
+
+    .content__table__wrap {
+        gap: 5px;
+        min-width: initial;
+        width: 90px;
+        font-size: 12px;
+        padding-left: 50px;
+    }
+
+    .content__table__duration {
+        display: none;
+    }
+    .content__table__item--btn-group {
+        gap: 10px;
+    }
+
+    .content__table__item--title {
+        font-size: 12px;
+    }
+
+    .content__table__wrap::before {
+        transform: scale(0.6);
+        left: -10px;
+    }
+
+    .content__table__item--date {
+        font-size: 12px;
+    }
+
+    .delete-btn {
+        font-size: 10px;
+        right: 0px;
+        padding: 3px 5px;
+        min-width: 140px;
+    }
+}
+
+@keyframes removeNotice {
+    from {
+        display:block;
+        opacity: 1;
+        top: -20px;
+    }
+
+    to {
+        display: none;
+        opacity: 0;
+        top: -40px;
+    }
+}

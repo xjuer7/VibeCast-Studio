@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans&family=Play&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Actor", "Nata Sans" , sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body:has(#auth) {
+    position: relative;
+    background-image: linear-gradient(#fc6d3ec4, #3782c4c4);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body:has(#auth)::before {
+    position: absolute;
+    opacity: 0.15;
+    content: '';
+    background-image: url('../../img/logo.svg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: space;
+    animation: background-move 15s infinite alternate;
+}
+#app-main {
+    display: none;
+}
+
+.header .container {
+    padding-top: 15px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+}
+
+.container {
+    padding-right: 30px;
+    padding-left: 46px;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+}
+
+.content__main {
+    padding-top: 35px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content__title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: var(--light-black-color);
+    margin: 0 0 22px;
+}
+
+.content__tracks {
+    display: flex;
+    flex-direction: column;
+    /* min-height: calc(100% + 300px); */
+    min-height: 100%;
+}
+
+@media (max-width: 1024px) {
+    .content__title {
+        font-size: 24px;
+    }
+
+    .content__tracks {
+        padding-bottom: 50px;
+    }
+
+    app-main
+}
+
+@media (max-width: 767px) {
+    .content {
+         flex-direction: column;
+         background-color: var(--light-gray-color);
+         min-height: 100vh;
+    }
+
+    .content__title {
+        display: none;
+    }
+
+    .header .container {
+        padding: 15px;
+    }
+
+    .content__main {
+        padding: 0;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+       
+}
+
+@keyframes background-move {
+    from {
+        transform: scale(2.4) rotate(-20deg) translateX(-50px);
+    }
+    to {
+        transform: scale(2.4) rotate(-20deg) translateX(50px);
+    }
+}

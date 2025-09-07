@@ -1,0 +1,27 @@
+
+.header {
+    display: flex;
+    width: 100%;
+}
+
+.header__aside {
+    display: flex;
+    align-items: center;
+    max-width: 290px;
+    position: relative;
+    padding: 20px 53px;
+    background-color: var(--white-color);
+}
+
+@media (max-width: 1024px) {
+    .header__aside {
+        max-width: 200px;
+        padding: 15px;
+    }
+
+    .header__aside img {
+        max-width: 178px;
+    }
+}
+
+

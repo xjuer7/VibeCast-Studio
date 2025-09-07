@@ -1,0 +1,93 @@
+
+.header__btn-account {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-family: 'Actor', sans-serif;
+    font-size: 14px;
+    line-height:12px ;
+    letter-spacing: 0.14px;
+    gap: 8px;
+    padding: 6px 13px;
+    background-color: var(--light-gray-color);
+    border-radius: 30px;
+    border: none;
+    min-width: 250px;
+    transition: background-color .3s ease-in-out;
+}
+
+.header__btn-account::after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 10px;
+    background-image: url('../../img/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    right: 15px;
+    transition: right .3s ease-in-out;
+}
+.header__user-img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--white-color);
+}
+
+.header__user-none path {
+    transform: scale(1.5) translate(6px, 2px);
+}
+
+.header__btn-account:hover, 
+.header__btn-account:focus-visible {
+    outline: none;
+    background-color: var(--row-gray);
+}
+
+.header__btn-account:hover::after {
+    right: 25px;
+}
+
+@media (max-width: 1024px) {
+    .header__btn-account {
+        /* margin-left: auto; */
+        min-width: 120px;
+        background-color: transparent;
+    }
+
+    .header__user-none {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header__user-none path {
+        transform: scale(1) translate(7px, 2px);
+    }
+
+
+    .header__btn-account::after {
+        content: none;
+    }
+
+    .header__user-none::after {
+        top: 10%;
+        left: 22%;
+        transform: scale(1);
+    }
+
+    .header__user-img {
+        background-color: var(--light-gray-color);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .account-btn-return
+    .header__btn-account {
+        
+        display: none;
+    }
+}

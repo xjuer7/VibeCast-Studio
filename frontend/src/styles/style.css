@@ -1,0 +1,13 @@
+@import url('./variables.css');
+
+@import url('./pages/auth.css');
+@import url('./pages/main.css');
+
+@import url('./elems/header.css');
+@import url('./elems/button.css');
+@import url('./elems/input.css');
+@import url('./elems/form.css');
+@import url('./elems/radio.css');
+@import url('./elems/table.css');
+@import url('./elems/player.css');
+@import url('./elems/account.css');
