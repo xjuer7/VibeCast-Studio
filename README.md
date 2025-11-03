@@ -48,4 +48,11 @@ npm run start
 Карточка каждого трека с базовыми метаданными.
 
 Профильная страница пользователя с возможностью обновить аватар и выйти из приложения.  
+
+![](frontend/src/images/screen.gif)
+![](frontend/src/images/audio-desk.png)
+![](frontend/src/images/mobile.png)
+![](frontend/src/images/account.png)
+
+
   
